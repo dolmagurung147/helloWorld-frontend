@@ -14,8 +14,26 @@ class Login extends Component {
   }
 
   //------------------ Login -------------------------//
-  onClickHandler = (e) => {
-    console.log(this.state)
+  onClickHandler = () => {
+    fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+        'Accepts': 'application/json',
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        user: {username: this.state.username, password: this.state.password}
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      // if (data.errors) {
+      //   alert(data.errors)
+      // } else {
+      //   console.log("hey")
+      // }
+      console.log(data)
+    })
   }
   //--------------------------------------------------//
 
