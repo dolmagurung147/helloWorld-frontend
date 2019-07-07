@@ -27,12 +27,12 @@ class Login extends Component {
     })
     .then(res => res.json())
     .then(data => {
-      // if (data.errors) {
-      //   alert(data.errors)
-      // } else {
-      //   console.log("hey")
-      // }
-      console.log(data)
+      if (data.errors) {
+        alert(data.errors)
+      } else {
+        localStorage.setItem('token', data.token)
+        console.log("hey")
+      }
     })
   }
   //--------------------------------------------------//
