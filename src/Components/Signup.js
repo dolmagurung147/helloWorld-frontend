@@ -19,6 +19,7 @@ class Signup extends Component {
 
   onClickHandler = (e) => {
     console.log(this.state)
+    
   }
 
   render(){
