@@ -9,10 +9,16 @@ class MainContainer extends Component {
     loggedIn: false
   }
 
+  login = () => {
+    this.setState({
+      loggedIn: true
+    })
+  }
+
   showLoginSignup = () => {
     return (
       <div>
-        <Login />
+        <Login login={this.login}/>
         <Signup />
       </div>
     )

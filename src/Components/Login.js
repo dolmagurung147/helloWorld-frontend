@@ -31,6 +31,7 @@ class Login extends Component {
         alert(data.errors)
       } else {
         localStorage.setItem('token', data.token)
+        this.props.login()
         console.log("hey")
       }
     })
