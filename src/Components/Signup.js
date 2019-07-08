@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 
+var goby = require('goby').init();
+
 class Signup extends Component {
 
   state = {
     firstName: '',
     lastName: '',
-    username: '',
     password: '',
     dob: '',
-    sexualRepresentation: ''
+    sexualRepresentation: '',
+    username: goby.generate(['adj', 'pre', 'suf'])
   }
 
   onChangeHandler = (e) => {
@@ -19,7 +21,7 @@ class Signup extends Component {
 
   onClickHandler = (e) => {
     console.log(this.state)
-    
+
   }
 
   render(){
@@ -27,7 +29,6 @@ class Signup extends Component {
       <div>
         First Name: <input type='text' value={this.state.firstName} name='firstName' placeholder='First Name' onChange={this.onChangeHandler} />
         Last Name: <input type='text' value={this.state.lastName} name='lastName' placeholder='Last Name' onChange={this.onChangeHandler} />
-        Username: <input type='text' value={this.state.username} name='username' placeholder='Username' onChange={this.onChangeHandler} />
         Password: <input type='password' value={this.state.password} name='password' placeholder='Password' onChange={this.onChangeHandler} />
         Date of Birth: <input type='date' value={this.state.dob} name='dob' placeholder='Date of Birth' onChange={this.onChangeHandler} />
         Sexual Represenatation: <select onChange={this.onChangeHandler} value={this.state.sexualRepresentation} name='sexualRepresentation'>
