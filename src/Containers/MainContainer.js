@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 
 import Login from '../Components/Login'
 import Signup from '../Components/Signup'
+import NavBar from '../Components/NavBar'
+import Homepage from './Homepage'
+import Landingpage from './Landingpage'
 
 class MainContainer extends Component {
 
@@ -24,19 +27,13 @@ class MainContainer extends Component {
     )
   }
 
-  showMainPage = () => {
-    return (
-      <div>
-        You are logged in
-      </div>
-    )
-  }
 
   render() {
     return (
       <div>
+        <NavBar />
         <h1>Hello World!</h1>
-        {this.state.loggedIn ? this.showMainPage() : this.showLoginSignup()}
+        {this.state.loggedIn ? <Homepage/> : <Landingpage />}
       </div>
     )
   }
