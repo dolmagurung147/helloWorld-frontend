@@ -32,7 +32,7 @@ class Login extends Component {
       } else {
         localStorage.setItem('token', data.token)
         this.props.login()
-        console.log("hey")
+        console.log(data)
       }
     })
   }

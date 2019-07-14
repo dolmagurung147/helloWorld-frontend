@@ -4,6 +4,7 @@ const Homepage = () => {
   return (
     <div>
       Welcome to your homepage
+      {console.log(localStorage)}
     </div>
   )
 }
