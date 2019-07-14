@@ -44,6 +44,7 @@ class Login extends Component {
         Username: <input type='text' value={this.state.username} name='username' placeholder='Username' onChange={this.onChangeHandler} />
         Password: <input type='password' value={this.state.password} name='password' placeholder='Password' onChange={this.onChangeHandler} />
         <button onClick={this.onClickHandler}>Login</button>
+        New User? <button onClick={this.props.signup}> Sign Up </button>
       </div>
     )
   }

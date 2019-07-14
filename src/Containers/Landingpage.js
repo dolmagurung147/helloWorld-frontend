@@ -17,8 +17,7 @@ class Landingpage extends Component{
   render() {
     return (
       <div>
-        {this.state.newUser ? <Signup /> : <Login login={this.props.login} />}
-        New User? <button onClick={this.signUpClickHandler}> Sign Up </button>
+        {this.state.newUser ? <Signup /> : <Login login={this.props.login} signup={this.signUpClickHandler}/>}
       </div>
     )
   }
